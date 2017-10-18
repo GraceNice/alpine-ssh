@@ -1,6 +1,8 @@
-# see https://hub.docker.com/r/phuslu/alpine/
+# frok from https://hub.docker.com/r/phuslu/alpine/
 
-FROM alpine:3.6
+# FROM alpine:3.6
+FROM alpine:latest
+
 RUN \
   sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
   apk update && \
@@ -64,6 +66,6 @@ start()\n\
   curl -f https://phuslu.github.io/bashrc >/root/.bash_profile && \
   curl -f https://raw.githubusercontent.com/rupa/z/master/z.sh >/root/.z.sh && \
   # set root password for ssh
-  echo root:toor | chpasswd
+  echo root:toorroot | chpasswd
 
 CMD ["/sbin/init"]
